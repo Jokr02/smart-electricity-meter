@@ -114,14 +114,6 @@ Suggested tools:
 
 ---
 
-## ✨ Ideas for Extensions
-
-- Control multiple consumers (e.g. EV charger)
-- Store to InfluxDB
-- Add configuration Web UI
-- Add OTA updates (ArduinoOTA or ESPHome)
-
----
 
 ## 📄 License
 
