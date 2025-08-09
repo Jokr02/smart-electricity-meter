@@ -23,14 +23,14 @@
 #define INVERT_SERIAL false
 
 // ======= WLAN =======
-const char* WIFI_SSID = "TP-LINK_A32AEC";
-const char* WIFI_PASS = "51914691";
+const char* WIFI_SSID = "ssid";
+const char* WIFI_PASS = "pwd";
 
 // ======= MQTT (HiveMQ ohne TLS) =======
-const char* MQTT_HOST   = "6ae771c4cb604a779b7284e9e68022e0.s2.eu.hivemq.cloud"; // z.B. broker.hivemq.com oder deine IP
+const char* MQTT_HOST   = "ip"; // z.B. broker.hivemq.com oder deine IP
 const uint16_t MQTT_PORT= 8883;
-const char* MQTT_USER   = "JohannesK1208";   // optional
-const char* MQTT_PASS   = "ggWyR3jBBb9Y9uG";   // optional
+const char* MQTT_USER   = "user";   // optional
+const char* MQTT_PASS   = "pwd";   // optional
 
 // ===== Topics =====
 const char* T_IMPORT_KWH    = "home/pv/Bezug_kWh";
@@ -51,33 +51,7 @@ const char* T_EXPORT_W     = "home/pv/Leistung_Export_W";
 // === Root CA für HiveMQ ===
 static const char ROOT_CA[] PROGMEM = R"EOF(
 -----BEGIN CERTIFICATE-----
-MIIFBTCCAu2gAwIBAgIQS6hSk/eaL6JzBkuoBI110DANBgkqhkiG9w0BAQsFADBP
-MQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFy
-Y2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBa
-Fw0yNzAzMTIyMzU5NTlaMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBF
-bmNyeXB0MQwwCgYDVQQDEwNSMTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
-AoIBAQDPV+XmxFQS7bRH/sknWHZGUCiMHT6I3wWd1bUYKb3dtVq/+vbOo76vACFL
-YlpaPAEvxVgD9on/jhFD68G14BQHlo9vH9fnuoE5CXVlt8KvGFs3Jijno/QHK20a
-/6tYvJWuQP/py1fEtVt/eA0YYbwX51TGu0mRzW4Y0YCF7qZlNrx06rxQTOr8IfM4
-FpOUurDTazgGzRYSespSdcitdrLCnF2YRVxvYXvGLe48E1KGAdlX5jgc3421H5KR
-mudKHMxFqHJV8LDmowfs/acbZp4/SItxhHFYyTr6717yW0QrPHTnj7JHwQdqzZq3
-DZb3EoEmUVQK7GH29/Xi8orIlQ2NAgMBAAGjgfgwgfUwDgYDVR0PAQH/BAQDAgGG
-MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATASBgNVHRMBAf8ECDAGAQH/
-AgEAMB0GA1UdDgQWBBS7vMNHpeS8qcbDpHIMEI2iNeHI6DAfBgNVHSMEGDAWgBR5
-tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKG
-Fmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0gBAwwCjAIBgZngQwBAgEwJwYD
-VR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVuY3Iub3JnLzANBgkqhkiG9w0B
-AQsFAAOCAgEAkrHnQTfreZ2B5s3iJeE6IOmQRJWjgVzPw139vaBw1bGWKCIL0vIo
-zwzn1OZDjCQiHcFCktEJr59L9MhwTyAWsVrdAfYf+B9haxQnsHKNY67u4s5Lzzfd
-u6PUzeetUK29v+PsPmI2cJkxp+iN3epi4hKu9ZzUPSwMqtCceb7qPVxEbpYxY1p9
-1n5PJKBLBX9eb9LU6l8zSxPWV7bK3lG4XaMJgnT9x3ies7msFtpKK5bDtotij/l0
-GaKeA97pb5uwD9KgWvaFXMIEt8jVTjLEvwRdvCn294GPDF08U8lAkIv7tghluaQh
-1QnlE4SEN4LOECj8dsIGJXpGUk3aU3KkJz9icKy+aUgA+2cP21uh6NcDIS3XyfaZ
-QjmDQ993ChII8SXWupQZVBiIpcWO4RqZk3lr7Bz5MUCwzDIA359e57SSq5CCkY0N
-4B6Vulk7LktfwrdGNVI5BsC9qqxSwSKgRJeZ9wygIaehbHFHFhcBaMDKpiZlBHyz
-rsnnlFXCb5s8HKn5LsUgGvB24L7sGNZP2CX7dhHov+YhD+jozLW2p9W4959Bz2Ei
-RmqDtmiXLnzqTpXbI+suyCsohKRg6Un0RC47+cpiVwHiXZAW+cn8eiNIjqbVgXLx
-KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
+//your cert
 -----END CERTIFICATE-----
 )EOF";
 
@@ -88,7 +62,7 @@ PubSubClient mqtt(*tlsClient);
 
 bool heatingOn = false;
 unsigned long lastPollMs = 0;
-const unsigned long pollIntervalMs = 120000;
+const unsigned long pollIntervalMs = 20000;
 
 bool   havePrev = false;
 double prev_import_kWh = 0.0;
@@ -300,87 +274,43 @@ if (dt_ms > 0) {
 }
 
 // Debug
-Serial.print("Import_W: ");
-if (!isnan(import_W)) { Serial.print(import_W, 1); Serial.print(" W, "); } else Serial.print("n/a, ");
-Serial.print("Export_W: ");
-if (!isnan(export_W)) { Serial.print(export_W, 1); Serial.println(" W"); } else Serial.println("n/a");
+Serial.print("ΔImport: "); Serial.print(d_import, 4); Serial.print(" kWh, ");
+Serial.print("ΔExport: "); Serial.print(d_export, 4); Serial.print(" kWh, ");
+Serial.print("Δt: ");     Serial.print(dt_ms);        Serial.println(" ms");
+Serial.print("Avg Net Power: ");
+if (!isnan(avg_W)) { Serial.print(avg_W, 1); Serial.println(" W"); }
+else               { Serial.println("n/a"); }
 
-// Hysterese (wie gehabt) nutzt weiterhin avg_W (Netto, +Bezug / -Einspeisung)
+// Hysterese (negativ = Einspeisung)
 if (!isnan(avg_W)) {
   if (!heatingOn && avg_W < RELAY_ON_THRESHOLD) {
-    digitalWrite(RELAY_PIN, HIGH);
-    heatingOn = true;
-    Serial.println("[CTRL] Heater ON (avg export sufficient)");
+    digitalWrite(RELAY_PIN, HIGH); heatingOn = true; Serial.println("[CTRL] Heater ON");
   } else if (heatingOn && avg_W > RELAY_OFF_THRESHOLD) {
-    digitalWrite(RELAY_PIN, LOW);
-    heatingOn = false;
-    Serial.println("[CTRL] Heater OFF (avg export too low)");
+    digitalWrite(RELAY_PIN, LOW);  heatingOn = false; Serial.println("[CTRL] Heater OFF");
   }
 }
 
-// MQTT publish (nur wenn verbunden)
+// MQTT publish -> jetzt immer
 mqtt_ensure();
 if (mqtt.connected()) {
-  // Energiestände (retain = true)
   pubFloat(T_IMPORT_KWH, import_kWh, 3, true);
   pubFloat(T_EXPORT_KWH, export_kWh, 3, true);
-
-  // Leistungen (retain = false, es sind Momentanwerte)
-  if (!isnan(avg_W))    pubFloat(T_NET_W,    avg_W,    1, false);   // Netto (+Bezug / -Einspeisung)
-  if (!isnan(import_W)) pubFloat(T_IMPORT_W, import_W, 1, false);   // >= 0
-  if (!isnan(export_W)) pubFloat(T_EXPORT_W, export_W, 1, false);   // >= 0
-
+  if (!isnan(avg_W)) pubFloat(T_NET_W, avg_W, 1, false);
   if (serialNo.length()) pubText(T_SERIAL, serialNo, true);
   pubText(T_HEATER_STATE, heatingOn ? "ON" : "OFF", true);
   mqtt.loop();
 }
 
-
-      Serial.print("ΔImport: "); Serial.print(d_import, 4); Serial.print(" kWh, ");
-      Serial.print("ΔExport: "); Serial.print(d_export, 4); Serial.print(" kWh, ");
-      Serial.print("Δt: "); Serial.print(dt_ms); Serial.println(" ms");
-      Serial.print("Avg Net Power: ");
-      if (!isnan(avg_W)) { Serial.print(avg_W, 1); Serial.println(" W"); }
-      else { Serial.println("n/a"); }
-
-      // Hysterese (negativ = Einspeisung)
-      if (!isnan(avg_W)) {
-        if (!heatingOn && avg_W < RELAY_ON_THRESHOLD) {
-          digitalWrite(RELAY_PIN, HIGH);
-          heatingOn = true;
-          Serial.println("[CTRL] Heater ON (avg export sufficient)");
-        } else if (heatingOn && avg_W > RELAY_OFF_THRESHOLD) {
-          digitalWrite(RELAY_PIN, LOW);
-          heatingOn = false;
-          Serial.println("[CTRL] Heater OFF (avg export too low)");
-        }
-      }
-
-      // MQTT publish
-      mqtt_ensure();
-      if (mqtt.connected()) {
-        pubFloat(T_IMPORT_KWH, import_kWh, 3, true);
-        pubFloat(T_EXPORT_KWH, export_kWh, 3, true);
-        if (!isnan(avg_W)) pubFloat(T_NET_W, avg_W, 1, false);
-        if (serialNo.length()) pubText(T_SERIAL, serialNo, true);
-        pubText(T_HEATER_STATE, heatingOn ? "ON" : "OFF", true);
-        mqtt.loop();
-      }
-    } else if (!havePrev) {
-      Serial.println("[INFO] Erste Messung – noch keine Durchschnittsleistung.");
-    } else {
-      Serial.println("[INFO] Keine Registeränderung – Durchschnittsleistung nicht berechnet.");
-    }
-
-    prev_import_kWh = import_kWh;
-    prev_export_kWh = export_kWh;
-    prev_time_ms = millis();
-    havePrev = true;
+// Prev-Werte aktualisieren
+prev_import_kWh = import_kWh;
+prev_export_kWh = export_kWh;
+prev_time_ms = now;
+havePrev = true;
   }
 
   Serial.println("-------------------------");
 }
-
+}
 
 // ====== Setup / Loop ======
 void setup() {
